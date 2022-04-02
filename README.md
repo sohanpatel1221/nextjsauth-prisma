@@ -1,11 +1,13 @@
 ### 1. Configure your local environment
 
-Rename the `.env.example` file in this directory to `.env` (which
-will be ignored by Git):
+Create an `.env` file and add the following:
 
 ```
-cp .env.local.example .env.local
+DATABASE_URL= ""
+
 ```
+
+fill in our database url.
 
 Add your own values for all the environment variables.
 

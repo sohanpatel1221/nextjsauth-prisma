@@ -2,6 +2,10 @@
 
 import { resetWarningCache } from 'prop-types/checkPropTypes';
 
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
+
 export default async function handler(req, res) {
 	// Create new home
 	if (req.method === 'POST') {

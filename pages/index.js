@@ -7,8 +7,6 @@ import { PrismaClient } from '@prisma/client';
 export async function getServerSideProps() {
 	const prisma = new PrismaClient();
 	const homes = await prisma.home.findMany();
-	console.log(homes);
-	console.log('hello');
 
 	return {
 		props: {
@@ -18,7 +16,7 @@ export async function getServerSideProps() {
 	};
 }
 
-export default function Home({ homes = [] }) {
+export default function Home({ home }) {
 	return (
 		<Layout>
 			<h1 className="text-xl font-medium text-gray-800">
@@ -28,7 +26,7 @@ export default function Home({ homes = [] }) {
 				Explore some of the best places in the world
 			</p>
 			<div className="mt-8">
-				<Grid homes={homes} />
+				<Grid homes={home} />
 			</div>
 		</Layout>
 	);
