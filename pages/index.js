@@ -16,7 +16,7 @@ export async function getServerSideProps() {
 	};
 }
 
-export default function Home({ home }) {
+export default function Home(props) {
 	return (
 		<Layout>
 			<h1 className="text-xl font-medium text-gray-800">
@@ -26,7 +26,7 @@ export default function Home({ home }) {
 				Explore some of the best places in the world
 			</p>
 			<div className="mt-8">
-				<Grid homes={home} />
+				<Grid homes={props.home} />
 			</div>
 		</Layout>
 	);
